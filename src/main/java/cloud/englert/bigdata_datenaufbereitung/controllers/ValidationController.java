@@ -4,6 +4,8 @@ import cloud.englert.bigdata_datenaufbereitung.validators.DateValidator;
 import cloud.englert.bigdata_datenaufbereitung.validators.GeoValidator;
 import cloud.englert.bigdata_datenaufbereitung.validators.NumberValidator;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Linus Englert
  */
 @RestController
+@Tag(name = "Validation")
 public class ValidationController {
     private final String PATH = "/validation";
 
