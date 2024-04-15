@@ -1,1 +1,13 @@
-<p>home works!</p>
+<button (click)="init()">Init</button>
+<table>
+  <thead>
+    <th *ngFor="let header of column_titles">
+      {{header}}
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let value of row">{{value}}</td>
+    </tr>
+  </tbody>
+</table>

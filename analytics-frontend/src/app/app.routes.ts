@@ -6,11 +6,11 @@ import {SentimentComponent} from "./analytics/sentiment/sentiment.component";
 import {VisualizationComponent} from "./analytics/visualization/visualization.component";
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
   { path: 'classification', component: ClassificationComponent},
   { path: 'patterns', component: PatternsComponent},
   { path: 'sentiment', component: SentimentComponent},
   { path: 'visualization', component: VisualizationComponent},
-  { path: '**', component: HomeComponent}
+  { path: '**', redirectTo: 'home'},
 ];
