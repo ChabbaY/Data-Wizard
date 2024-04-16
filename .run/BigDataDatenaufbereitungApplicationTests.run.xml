@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="BigDataDatenaufbereitungApplicationTests" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="BigData_Datenaufbereitung" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="cloud.englert.bigdata_datenaufbereitung.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="cloud.englert.bigdata_datenaufbereitung" />
+    <option name="MAIN_CLASS_NAME" value="cloud.englert.bigdata_datenaufbereitung.BigDataDatenaufbereitungApplicationTests" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

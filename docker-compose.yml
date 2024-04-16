@@ -21,3 +21,17 @@ services:
       PMA_HOST: database
     ports:
       - "8080:80"
+
+  api:
+    container_name: api
+    image: ${DOCKER_REGISTRY-}big-data-analytics-api
+    build: .
+    ports:
+      - "5555:5555"
+
+  angular:
+    container_name: angular
+    image: ${DOCKER_REGISTRY-}big-data-analytics-angular
+    build: ./analytics-frontend
+    ports:
+      - "4200:4000"
