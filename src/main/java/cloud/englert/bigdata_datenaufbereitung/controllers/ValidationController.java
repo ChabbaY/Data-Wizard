@@ -2,12 +2,15 @@ package cloud.englert.bigdata_datenaufbereitung.controllers;
 
 import cloud.englert.bigdata_datenaufbereitung.validators.DateValidator;
 import cloud.englert.bigdata_datenaufbereitung.validators.GeoValidator;
+import cloud.englert.bigdata_datenaufbereitung.validators.LanguageValidator;
 import cloud.englert.bigdata_datenaufbereitung.validators.NumberValidator;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * REST-Controller for validation tasks.
@@ -33,6 +36,13 @@ public class ValidationController {
     @GetMapping(PATH + "/long-lat")
     ResponseEntity<?> validateLongLat(@RequestParam String value) {
         return ResponseEntity.ok(GeoValidator.isLongLatFormat(value));
+    }
+
+    // Language Validator
+    @GetMapping(PATH + "/language")
+    ResponseEntity<?> validateLanguage(@RequestParam String value) {
+        var validator = new LanguageValidator();
+        return ResponseEntity.ok(validator.getLanguage(value));
     }
 
     // Number Validator

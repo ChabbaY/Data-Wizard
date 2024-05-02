@@ -67,6 +67,14 @@
             <artifactId>uimaj-core</artifactId>
             <version>3.5.0</version>
         </dependency>
+
+        <!-- Language-Detector -->
+        <dependency>
+            <groupId>com.cybozu.labs</groupId>
+            <artifactId>langdetect</artifactId>
+            <version>1.1-20120112</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
