@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgForOf} from "@angular/common";
+import {TableService} from "../../table.service";
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,24 @@ import {NgForOf} from "@angular/common";
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
   rows: string[][] = []; // table row that contains columns
   row_count: number = 0;
   column_titles: string[] = []; // table headers
+
+  constructor(private tableService: TableService) { }
+
+  ngOnInit(): void {
+    this.rows = this.tableService.get_rows();
+    this.row_count = this.tableService.get_row_count();
+    this.column_titles = this.tableService.get_column_titles();
+  }
+
+  ngOnDestroy() {
+    this.tableService.set_rows(this.rows);
+    this.tableService.set_row_count(this.row_count);
+    this.tableService.set_column_titles(this.column_titles);
+  }
 
   init() {
     this.read_from_csv("A;B\nC;D", ";", true);
