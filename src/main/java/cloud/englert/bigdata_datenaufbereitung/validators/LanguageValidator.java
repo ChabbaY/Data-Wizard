@@ -8,8 +8,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
- * Apache OpenNLP Language Detection
- * <a href="https://opennlp.apache.org/docs/2.3.3/manual/opennlp.html#tools.langdetect">Docs</a>
+ * Language detection
+ *
+ * @author Linus Englert
  */
 public class LanguageValidator {
     private final static String PATH = "src/main/resources/languages/";
@@ -35,6 +36,11 @@ public class LanguageValidator {
         }
     }
 
+    /**
+     * Detects the language of a String
+     * @param value String to interpret
+     * @return the 2-character language code as in LANGUAGES, e.g. 'de'
+     */
     public String getLanguage(String value) {
         try {
             var detector = DetectorFactory.create();

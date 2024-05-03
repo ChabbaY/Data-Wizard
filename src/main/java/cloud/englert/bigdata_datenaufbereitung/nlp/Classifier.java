@@ -10,4 +10,9 @@ public class Classifier extends AbstractClassificator {
     protected String getTrainingFilePath() {
         return "src/main/resources/classification.train";
     }
+
+    @Override
+    protected String getModelPath() {
+        return "src/main/resources/models/classifier.bin";
+    }
 }

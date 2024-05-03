@@ -27,7 +27,23 @@ Database root password: pfopSDuTXh6Am5yLX7dyFcPWt
 Use `docker-compose up --build`
 
 ## Usage
+- Example projects from 'Big Data in der Praxis'
+  - https://github.com/StefanPapp/bigdata_buch
+
+### Spring Boot
 - Spring Framework (version 3.2.4)
-- Springdoc Openapi for Swagger-UI generation https://github.com/springdoc/springdoc-openapi
+- Springdoc Openapi for Swagger-UI generation
+  - https://github.com/springdoc/springdoc-openapi
+- Configure CORS for Spring Boot
+  - https://spring.io/guides/gs/rest-service-cors
+- Return String response as JSON
+  - https://stackoverflow.com/a/42837009
+
+### Angular
 - Angular Framework (version 17.3.4)
-- How to adapt Dockerfile to Angular 17 https://stackoverflow.com/questions/77850159/how-to-deploy-angular-17-with-ssr-with-docker
+- How to adapt Dockerfile to Angular 17
+  - https://stackoverflow.com/questions/77850159/how-to-deploy-angular-17-with-ssr-with-docker
+
+### NLP
+- Train a Classifier with Apache OpenNLP
+  - https://opennlp.apache.org/docs/2.3.3/manual/opennlp.html#tools.doccat.classifying

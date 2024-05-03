@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * Enabling CORS requests from localhost.
+ * Enabling CORS requests from the angular application.
  * <a href="https://spring.io/guides/gs/rest-service-cors">Docs</a>
  *
  * @author Linus Englert

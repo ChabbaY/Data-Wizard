@@ -11,6 +11,11 @@ public class SentimentAnalyzer extends AbstractClassificator {
         return "src/main/resources/sentiment.train";
     }
 
+    @Override
+    protected String getModelPath() {
+        return "src/main/resources/models/sentiment.bin";
+    }
+
     public String classifyByWordList(String value) {
         int good = 0, bad = 0;
 

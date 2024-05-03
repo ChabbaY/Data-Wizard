@@ -1,6 +1,9 @@
 package cloud.englert.bigdata_datenaufbereitung.nlp;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
@@ -20,6 +23,8 @@ import opennlp.tools.util.TrainingParameters;
  */
 public abstract class AbstractClassificator {
     protected abstract String getTrainingFilePath();
+    protected abstract String getModelPath();
+
     protected DoccatModel train() {
         DoccatModel model = null;
         try (var os = new PlainTextByLineStream(
@@ -33,11 +38,19 @@ public abstract class AbstractClassificator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        if (model != null) saveModel(model);
         return model;
     }
 
     public String classify(String value) {
         DoccatModel model = null;
+
+        try (var is = new FileInputStream(getModelPath())) {
+            model = new DoccatModel(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (model == null) {
             model = train();
@@ -50,5 +63,13 @@ public abstract class AbstractClassificator {
             return categorizer.getBestCategory(outcomes);
         }
         return "";
+    }
+
+    protected void saveModel(DoccatModel model) {
+        try (var os = new BufferedOutputStream(new FileOutputStream(getModelPath()))) {
+            model.serialize(os);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
