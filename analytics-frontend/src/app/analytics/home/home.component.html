@@ -1,4 +1,11 @@
-<button (click)="init()">Init</button>
+<label for="upload">CSV-Datei auswählen: </label>
+<input id="upload" type="file" (change)="uploadFile($event)" [accept]="'.csv'" /><br />
+<label for="delimiter">Trennzeichen: </label>
+<input id="delimiter" type="text" [(ngModel)]="delimiter" /><br />
+<label for="has_header">Mit Überschriften? </label>
+<input id="has_header" type="checkbox" [(ngModel)]="has_header" /><br />
+<button (click)="init()" [hidden]="!uploaded">Hochladen</button>
+<button (click)="downloadFile()">Herunterladen</button>
 <table>
   <thead>
     <th *ngFor="let header of column_titles">

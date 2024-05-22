@@ -9,8 +9,7 @@ export class ClassificationService {
 
   constructor(private http: HttpClient) { }
 
-  test(): Observable<string> {
-    console.log("test")
-    return this.http.get<string>('http://localhost:5555/classification?value=Fussball');
+  classify(value: string): Observable<string> {
+    return this.http.get<string>(`http://localhost:5555/classification?value=${encodeURI(value)}`);
   }
 }
