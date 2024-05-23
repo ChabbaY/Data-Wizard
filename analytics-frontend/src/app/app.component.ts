@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgForOf],
+  imports: [RouterOutlet, RouterLink, NgForOf, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
