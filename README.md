@@ -31,7 +31,7 @@ Use `docker-compose up --build`
   - https://github.com/StefanPapp/bigdata_buch
 
 ### Spring Boot
-- Spring Framework (version 3.2.4)
+- Spring Framework (version 3.2.5)
 - Springdoc Openapi for Swagger-UI generation
   - https://github.com/springdoc/springdoc-openapi
 - Configure CORS for Spring Boot
