@@ -40,7 +40,7 @@ Use `docker-compose up --build`
   - https://stackoverflow.com/a/42837009
 
 ### Angular
-- Angular Framework (version 17.3.4)
+- Angular Framework (version 18.0.1)
 - How to adapt Dockerfile to Angular 17
   - https://stackoverflow.com/questions/77850159/how-to-deploy-angular-17-with-ssr-with-docker
 

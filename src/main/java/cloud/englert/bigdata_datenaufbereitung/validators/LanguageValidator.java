@@ -2,6 +2,7 @@ package cloud.englert.bigdata_datenaufbereitung.validators;
 
 import com.cybozu.labs.langdetect.DetectorFactory;
 import com.cybozu.labs.langdetect.LangDetectException;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,7 +15,9 @@ import java.util.HashMap;
  * @author Linus Englert
  */
 public class LanguageValidator {
-    private final static String PATH = "src/main/resources/languages/";
+    //private final static String PATH = "src/main/resources/languages/";
+
+    private final static String PATH = "languages/";
     private final static String[] LANGUAGES = {"af","ar","bg","bn","cs","da","de","el","en","es","et","fa","fi","fr",
             "gu","he","hi","hr","hu","id","it","ja","kn","ko","lt","lv","mk","ml","mr","ne","nl","no","pa","pl","pt",
             "ro","ru","sk","sl","so","sq","sv","sw","ta","te","th","tl","tr","uk","ur","vi","zh-cn","zh-tw"};
@@ -27,7 +30,8 @@ public class LanguageValidator {
         try {
             var jsonProfiles = new ArrayList<String>();
             for (String language : LANGUAGES) {
-                var br = new BufferedReader(new FileReader(PATH + language));
+                var file = new ClassPathResource(PATH + language).getFile();
+                var br = new BufferedReader(new FileReader(file));
                 String line;
                 while ((line = br.readLine()) != null) {
                     jsonProfiles.add(line);

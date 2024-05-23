@@ -11,20 +11,27 @@ public class LanguageValidatorTest {
     void recognizesGerman() {
         var validator = new LanguageValidator();
         var lang = validator.getLanguage("Wenn es regnet, ist die Straße nass.");
-        assertThat(lang).isEqualTo("de");
+        assertThat(lang).isEqualTo("Deutsch");
     }
 
     @Test
     void recognizesEnglish() {
         var validator = new LanguageValidator();
         var lang = validator.getLanguage("Is this a good test case? Conceivably.");
-        assertThat(lang).isEqualTo("en");
+        assertThat(lang).isEqualTo("Englisch");
     }
 
     @Test
     void recognizesFrench() {
         var validator = new LanguageValidator();
         var lang = validator.getLanguage("Bonjour! Je cherche mon croissant.");
-        assertThat(lang).isEqualTo("fr");
+        assertThat(lang).isEqualTo("Französisch");
+    }
+
+    @Test
+    void recognizesSwdish() {
+        var validator = new LanguageValidator();
+        var lang = validator.getLanguage("Hej hej! En sköldpadda äter ett äpple.");
+        assertThat(lang).isEqualTo("Schwedisch");
     }
 }
