@@ -14,8 +14,8 @@ export class AppComponent {
 
   home = { name: "Daten anreichern", target: "" };
   items = [
+    { name: "Validierung", target: "validation" },
     { name: "Klassifizierung", target: "classification" },
-    { name: "Mustererkennung", target: "patterns" },
     { name: "Sentiment Analyse", target: "sentiment" },
     { name: "Visualisierung", target: "visualization" }
   ];

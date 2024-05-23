@@ -1,0 +1,13 @@
+<div class="section">
+  <input type="text" [(ngModel)]="value" (change)="validate()" />
+  <div></div>
+  <p [ngClass]="(isInt) ? 'green' : 'red'">Int: {{isInt}}</p>
+  <p [ngClass]="(isDouble) ? 'green' : 'red'">Double: {{isDouble}}</p>
+  <p [ngClass]="(isYear) ? 'green' : 'red'">Year: {{isYear}}</p>
+  <p [ngClass]="(isDate) ? 'green' : 'red'">Date: {{isDate}}</p>
+  <p [ngClass]="(isLongLat) ? 'green' : 'red'">Long/Lat: {{isLongLat}}</p>
+</div>
+<div class="section">
+  <input type="text" [(ngModel)]="valueLanguage" (change)="validateLanguage()" />
+  <p>Language: {{isLanguage}}</p>
+</div>
