@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from "rxjs";
-import {ClassificationService} from "./classification.service";
-import {FormsModule} from "@angular/forms";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from "rxjs";
+import { ClassificationService } from "./classification.service";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-classification',

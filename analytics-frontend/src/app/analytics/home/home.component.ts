@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NgForOf} from "@angular/common";
-import {TableService} from "../../table.service";
-import {FormsModule} from "@angular/forms";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NgForOf } from "@angular/common";
+import { TableService } from "../../table.service";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-home',
