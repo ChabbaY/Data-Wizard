@@ -1,14 +1,24 @@
-<label for="upload">CSV-Datei auswählen: </label>
-<input id="upload" type="file" (change)="uploadFile($event)" [accept]="'.csv'" /><br />
-<label for="delimiter">Trennzeichen: </label>
-<input id="delimiter" type="text" [(ngModel)]="delimiter" /><br />
-<label for="has_header">Mit Überschriften? </label>
-<input id="has_header" type="checkbox" [(ngModel)]="has_header" /><br />
-<button (click)="init()" [hidden]="!uploaded">Hochladen</button>
-<button (click)="downloadFile()">Herunterladen</button>
+<div class="section">
+  <label for="upload">CSV-Datei auswählen: </label>
+  <input id="upload" type="file" (change)="uploadFile($event)" [accept]="'.csv'" /><br />
+  <label for="delimiter">Trennzeichen: </label>
+  <input id="delimiter" type="text" [(ngModel)]="delimiter" /><br />
+  <label for="has_header">Mit Überschriften? </label>
+  <input id="has_header" type="checkbox" [(ngModel)]="has_header" /><br />
+  <button (click)="init()" [hidden]="!uploaded">Datei Hochladen</button>
+  <button (click)="downloadFile()">Daten exportieren</button>
+</div>
+<div class="section">
+  <label for="method">Anreicherungs-Methode: </label>
+  <select id="method" [(ngModel)]="method">
+    <option *ngFor="let method of methods" value="{{method}}">{{method}}</option>
+  </select><br />
+  <button (click)="clean()">Daten bereinigen</button>
+</div>
 <table>
   <thead>
-    <th *ngFor="let header of column_titles">
+    <th *ngFor="let header of column_titles; let i = index">
+      <button (click)="enrich(i)">Anreichern</button><br />
       {{header}}
     </th>
   </thead>

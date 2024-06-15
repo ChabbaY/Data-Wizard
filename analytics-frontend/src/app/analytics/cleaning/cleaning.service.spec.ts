@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
-import { VisualizationService } from './visualization.service';
+import { CleaningService } from './cleaning.service';
 import { provideHttpClientTesting } from "@angular/common/http/testing";
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-describe('VisualizationService', () => {
-  let service: VisualizationService;
+describe('CleaningService', () => {
+  let service: CleaningService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
     imports: [],
     providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
 });
-    service = TestBed.inject(VisualizationService);
+    service = TestBed.inject(CleaningService);
   });
 
   it('should be created', () => {

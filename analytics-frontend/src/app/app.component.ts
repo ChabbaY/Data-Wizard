@@ -17,6 +17,6 @@ export class AppComponent {
     { name: "Validierung", target: "validation" },
     { name: "Klassifizierung", target: "classification" },
     { name: "Sentiment Analyse", target: "sentiment" },
-    { name: "Visualisierung", target: "visualization" }
+    { name: "Bereinigung", target: "cleaning" }
   ];
 }
