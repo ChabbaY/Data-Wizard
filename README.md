@@ -1,4 +1,4 @@
-# Big Data Datenaufbereitung
+# Data Wizard
 
 ## Running it
 Docker services:
